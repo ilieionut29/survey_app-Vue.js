@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-survey-content></app-survey-content>
+    <app-survey-result></app-survey-result>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SurveyContent from './components/SurveyContent.vue'
+import UserExperince from './components/UserExperiences.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    appSurveyContent: SurveyContent,
+    appSurveyResult: UserExperince,
+  },
+  beforeCreate() {
+        document.body.background = 'red';
+    }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  background: linear-gradient(180deg,#dff9fb 0%, #dff9fb 100%);
 }
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 </style>
